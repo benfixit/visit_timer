@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Visit Timer",
+    "description": "Increments a timer when you visit a specified web page",
+    "page_action": {
+        "default_title": "Visit Timer",
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "images/timer.png",
+            "48": "images/timer.png",
+            "32": "images/timer.png",
+            "16": "images/timer.png"
+        }
+    },
+    "icons": {
+        "128": "images/timer.png",
+        "48": "images/timer.png",
+        "32": "images/timer.png",
+        "16": "images/timer.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["https://www.facebook.com/*", "https://badoo.com/*"],
+        "js": ["content.js"]
+    }],
+    "permissions": ["storage", "tabs", "https://www.facebook.com/*", "https://badoo.com/*"],
+    "version": "1.0"
+}
